@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libro de Reclamaciones - VENDETTA</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 40px auto;
+        }
+        h2 {
+            color: #8B0000; /* Un rojo oscuro para darle el toque "Vendetta" */
+            text-align: center;
+            border-bottom: 2px solid #8B0000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        input:focus, textarea:focus {
+            border-color: #8B0000;
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #8B0000;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #5c0000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>LIBRO DE RECLAMACIONES <br> RESTAURANT VENDETTA</h2>
+        <form id="formReclamo">
+            <label for="nombre">Nombres y Apellidos completos:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="dni">DNI / Carné de Extranjería:</label>
+            <input type="number" id="dni" name="dni" required>
+
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" required>
+
+            <label for="celular">Número de Celular:</label>
+            <input type="tel" id="celular" name="celular" required>
+
+            <label for="fecha">Fecha del Suceso:</label>
+            <input type="date" id="fecha" name="fecha" required>
+
+            <label for="descripcion">Descripción del Reclamo:</label>
+            <textarea id="descripcion" name="descripcion" rows="6" required placeholder="Detalle aquí lo sucedido..."></textarea>
+
+            <button type="submit">Enviar Reclamo</button>
+        </form>
+    </div>
+
+    <script>
+        // Lógica para mostrar la alerta cuando se envía el formulario
+        document.getElementById('formReclamo').addEventListener('submit', function(event) {
+            // El preventDefault detiene el envío real temporalmente para que veas la alerta
+            // Dependiendo del método de envío de correo que elijas, esto puede cambiar.
+            event.preventDefault(); 
+            
+            alert("Su reclamo ha sido registrado con éxito. Se le dará una respuesta en un plazo máximo de 15 días hábiles.");
+            
+            // Aquí se ejecutaría el código para enviar los datos
+            // ...
+
+            // Limpiamos el formulario después de enviar
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
